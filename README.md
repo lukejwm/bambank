@@ -1,6 +1,8 @@
 # Bambank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.4.
+
+### NB: Use "npm install" and "ng serve" to run in browser for http://localhost:4200
 
 ## Development server
 

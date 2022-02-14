@@ -1,0 +1,30 @@
+﻿<h1>Transactions</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Balance</th>
+            <th style="width: 30%">Deposit</th>
+            <th style="width: 30%">Withdrawal</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions">
+            <td>{{transaction.balance}}</td>
+            <td>{{transaction.deposit}}</td>
+            <td>{{transaction.withdraw}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="deposit/{{transaction.id}}" class="btn btn-sm btn-primary mr-1">Deposit</a>
+                <button (click)="withdraw(transaction.id)" class="btn btn-sm btn-danger bth-withdraw" [disabled]="transaction.isWithdrawing">
+                    <span *ngIf="transaction.isWithdrawing" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!transaction.isWithdrawing">Withdraw</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!transactions">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
